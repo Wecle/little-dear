@@ -68,7 +68,8 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ icons, defaultValue = '', o
     setParentIndex(index)
     if (index !== parentIndex || shouldUpdate)
       setValue(item)
-    item?.children?.length ? categoryRefs.current[index]?.current?.open() : (onChange && onChange(item.categoryId, item))
+    onChange && onChange(item.categoryId, item)
+    !!item?.children?.length && categoryRefs.current[index]?.current?.open()
   }
 
   const handleSubItemClick = (item: IconInfo, index: number) => {
