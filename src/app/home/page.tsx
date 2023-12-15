@@ -19,7 +19,9 @@ const category2IconMap = {
 
 export default function Home() {
   const createBilling = api.billing.createBilling.useMutation()
-  const listBillings = api.billing.listBillings.useQuery()
+  const listBillings = api.billing.listBillings.useQuery({
+    page: 1,
+  })
 
   useDBSeeding()
 
@@ -29,7 +31,7 @@ export default function Home() {
       categoryId: '88da6c00-92c8-4fa9-ada1-c1dbf95780c3',
       categoryName: '餐饮',
       transactionAt: new Date(),
-      type: BillingType.EXPENSE,
+      type: Math.random() > 0.5 ? BillingType.EXPENSE : BillingType.INCOME,
     })
   }
 
@@ -57,7 +59,7 @@ export default function Home() {
     >
       <Box h={40} flexShrink={0} bg="primary.500" rounded={14} onClick={handleAddBilling}></Box>
       <Bill>
-        {listBillings.data?.map(b => (
+        {listBillings.data?.data.map(b => (
           <DateItem
             key={b.date}
             date={b.date}

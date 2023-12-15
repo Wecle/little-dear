@@ -13,7 +13,8 @@
     "start": "next start",
     "prepare": "simple-git-hooks && pnpm theme",
     "theme": "chakra-cli tokens ./src/config/index.ts",
-    "theme:watch": "chakra-cli tokens ./src/config/index.ts --watch"
+    "theme:watch": "chakra-cli tokens ./src/config/index.ts --watch",
+    "test": "vitest"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -31,7 +32,8 @@
     "@trpc/react-query": "^10.37.1",
     "@trpc/server": "^10.37.1",
     "argon2": "^0.31.2",
-    "drizzle-orm": "^0.28.5",
+    "dayjs": "^1.11.10",
+    "drizzle-orm": "^0.29.0",
     "drizzle-zod": "^0.5.1",
     "formik": "^2.4.5",
     "next": "^14.0.0",
@@ -54,7 +56,7 @@
     "@types/react-dom": "^18.2.14",
     "autoprefixer": "^10.4.14",
     "dotenv-cli": "^7.3.0",
-    "drizzle-kit": "^0.19.13",
+    "drizzle-kit": "^0.20.6",
     "eslint": "^8.47.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -63,7 +65,8 @@
     "postcss": "^8.4.27",
     "simple-git-hooks": "^2.9.0",
     "tailwindcss": "^3.3.3",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.6"
   },
   "ct3aMetadata": {
     "initVersion": "7.23.2"
